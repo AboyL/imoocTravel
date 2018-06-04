@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import FastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+// mock
+import 'mock/index.mock.js'
+// css
 import 'swiper/dist/css/swiper.css'
 import 'styles/reset.css'
 import 'styles/border.css'
