@@ -1,1 +1,1 @@
-import './icon-lits.mock'
+import './home.mock'

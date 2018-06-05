@@ -2,8 +2,7 @@
   <div class="icons">
     <swiper :options="swiperOptions">
       <swiper-slide v-for="(page,index) of pages"
-                    :key="index"
-                    v-if="icons.length>0">
+                    :key="index">
         <div class="icon"
              v-for="icon of page"
              :key="icon.key">
@@ -17,15 +16,19 @@
   </div>
 </template>
 <script>
-import http from 'util/http.js'
 export default {
   name: 'HomeIcons',
+  props: {
+    icons: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
       swiperOptions: {
         loop: true
-      },
-      icons: []
+      }
     }
   },
   computed: {
@@ -41,12 +44,6 @@ export default {
       console.log(pages)
       return pages
     }
-  },
-  async mounted () {
-    let iconList = await http.request({
-      url: 'getIcons'
-    })
-    this.icons = iconList
   }
 }
 </script>
