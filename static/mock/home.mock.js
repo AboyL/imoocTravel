@@ -66,3 +66,19 @@ Mock.mock(`${baseUrl}/getRecommends`, (url) => {
     }
   ]
 })
+
+Mock.mock(`${baseUrl}/getWeekends`, (url) => {
+  return [
+    {
+      key: '1',
+      src: 'http://img1.qunarzz.com/sight/source/1507/95/bf81a1519705f0.jpg_r_640x214_b29fb0c8.jpg',
+      title: '长沙必游玩top10',
+      desc: '和我在长沙的街头走一走'
+    }, {
+      key: '2',
+      src: 'http://img1.qunarzz.com/sight/source/1505/89/b2beff9f28b0db.jpg_r_640x214_94143396.jpg',
+      title: '玩味童年',
+      desc: '幸福之家'
+    }
+  ]
+})
