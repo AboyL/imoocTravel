@@ -7,10 +7,12 @@
       <i class="search iconfont icon-sousuo"></i>
       點擊搜索
     </div>
-    <div class="header-right">
-      城市
-      <i class="iconfont icon-xiasanjiao"></i>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        城市
+        <i class="iconfont icon-xiasanjiao"></i>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
@@ -24,21 +26,17 @@ export default {
 </script>
 <style scoped lang='stylus'>
 @import '~styles/varibles.styl'
+@import '~styles/mixin.styl'
 .header
-  $headerLine = 0.86rem
-  line-height $headerLine
-  height $headerLine
+  line-height $headerHeight
+  height $headerHeight
   display flex
   color #fff
   background-color $bgColor
   .header-left
-    width 0.64rem
-    float left
+    headerLeft()
     .back
-      font-size .6rem
-      text-align center
-      &:before
-        vertical-align: text-top;
+      headerLeftIcon()
   .header-input
     $size = 0.64rem
     flex 1
@@ -49,12 +47,13 @@ export default {
     margin-right 0.2rem
     background-color #FFF
     border-radius 0.1rem
-    padding-left .1rem
+    padding-left 0.1rem
     color #CCC
     .search
-      margin-left .1rem
+      margin-left 0.1rem
   .header-right
     width 1.24rem
     float right
     text-align center
+    color #ffffff
 </style>
