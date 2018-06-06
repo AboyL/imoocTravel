@@ -11,6 +11,7 @@
           </div>
         </div>
       </div>
+      <!-- 热门城市 -->
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
@@ -22,8 +23,10 @@
           </div>
         </div>
       </div>
+      <!-- 城市列表 -->
       <div class="area"
            v-for="(item,key) in cities"
+           :ref="key"
            :key="key">
         <div class="title border-topbottom">{{key}}</div>
         <ul class="item-list">
@@ -52,7 +55,8 @@ export default {
     cities: {
       type: Object,
       required: true
-    }
+    },
+    letter: String
   },
   computed: {
     ...mapState({
@@ -74,6 +78,14 @@ export default {
   },
   mounted () {
     this.scroll = new BetterScroll(this.$refs.wrapper)
+  },
+  watch: {
+    // 如果letter改变了就进行跳转
+    letter () {
+      console.log(this.letter)
+      const element = this.$refs[this.letter][0]
+      this.scroll.scrollToElement(element)
+    }
   }
 }
 </script>

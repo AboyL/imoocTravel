@@ -3,8 +3,10 @@
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
     <city-list :cities="cities"
+               :letter="letter"
                :hotCities="hotCities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-alphabet :cities="cities"
+                   @chooseLetter="handleLetter"></city-alphabet>
   </div>
 </template>
 <script>
@@ -24,7 +26,13 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
+    }
+  },
+  methods: {
+    handleLetter (letter) {
+      this.letter = letter
     }
   },
   async mounted () {
