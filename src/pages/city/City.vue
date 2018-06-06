@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list></city-list>
-    <city-alphabet></city-alphabet>
+    <city-list :cities="cities" :hotCities="hotCities"></city-list>
+    <city-alphabet :cities="cities"></city-alphabet>
   </div>
 </template>
 <script>
@@ -11,6 +11,7 @@ import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
 import CityAlphabet from './components/Alphabet'
+import http from 'util/http.js'
 export default {
   name: 'City',
   components: {
@@ -21,6 +22,19 @@ export default {
   },
   data () {
     return {
+      cities: {},
+      hotCities: []
+    }
+  },
+  async mounted () {
+    let result = (await http.request({
+      url: 'getCities'
+    }))
+    if (result.ret) {
+      const cities = result.data
+      this.cities = cities.cities
+      console.log(this.cities)
+      this.hotCities = cities.hotCities
     }
   }
 }
