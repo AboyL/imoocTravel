@@ -1,23 +1,62 @@
 <template>
-  <div class="banner">
-    <img src="//img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_600x330_b4ab7f0d.jpg"
-         alt="">
-    <div class="info">
-      <p class="title">大連</p>
-      <p class="number">
-        <i class="iconfont icon-tupian"></i>
-           39
-      </p>
+  <div>
+    <div class="banner"
+         @click="handleShowGarllary">
+      <img :src="img">
+      <div class="info">
+        <p class="title">{{title}}</p>
+        <p class="number">
+          <i class="iconfont icon-tupian"></i>
+          {{price}}
+        </p>
+      </div>
     </div>
+    <common-gallary :imgs="imgs"
+                    v-show="showGallary"
+                    @clickImg="handleShowGarllary">
+    </common-gallary>
   </div>
 </template>
 <script>
+import CommonGallary from 'common/gallary/Gallary'
+
 export default {
   name: 'DetailBanner',
+  components: {
+    CommonGallary
+  },
+  props: {
+    detail: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    imgs () {
+      return this.detail.imgs
+    },
+    img () {
+      console.log(this.detail)
+      return this.detail.imgs[0].src
+    },
+    title () {
+      return this.detail.title
+    },
+    price () {
+      return this.detail.price
+    }
+  },
   data () {
     return {
+      showGallary: false
+    }
+  },
+  methods: {
+    handleShowGarllary () {
+      this.showGallary = !this.showGallary
     }
   }
+
 }
 </script>
 <style scoped lang='stylus'>
@@ -36,19 +75,19 @@ export default {
     bottom 0
     left 0
     right 0
-    line-height .6rem
+    line-height 0.6rem
     color #ffffff
-    background-image linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.8))
+    background-image linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))
     .title
       flex 1
-      font-size .32rem
-      padding-left .3rem
+      font-size 0.32rem
+      padding-left 0.3rem
     .number
-      margin-top .14rem
-      padding 0 .4rem
-      height .4rem
-      line-height .4rem
-      border-radius .2rem
-      background rgba(0,0,0,.8)
-      font-size .24rem
+      margin-top 0.14rem
+      padding 0 0.4rem
+      height 0.4rem
+      line-height 0.4rem
+      border-radius 0.2rem
+      background rgba(0, 0, 0, 0.8)
+      font-size 0.24rem
 </style>

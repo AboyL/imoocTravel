@@ -1,10 +1,13 @@
 <template>
- <div>
-   <detail-banner></detail-banner>
-</div>
+  <div>
+    <detail-banner :detail="detail"
+                   v-if="detail">
+    </detail-banner>
+  </div>
 </template>
 <script>
 import DetailBanner from './components/Banner'
+import http from 'util/http.js'
 export default {
   name: 'Detail',
   components: {
@@ -12,7 +15,21 @@ export default {
   },
   data () {
     return {
+      detail: null
     }
+  },
+  async mounted () {
+    let loadingInstance = this.$loading({
+      target: document.body,
+      text: '拼命加载中'
+    })
+    let detail = await http.request({
+      url: 'getDetail'
+    })
+    this.detail = detail
+    this.$nextTick(() => { // 以服务的方式调用的 Loading 需要异步关闭
+      loadingInstance.close()
+    })
   }
 }
 </script>

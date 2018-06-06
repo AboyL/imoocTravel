@@ -39,7 +39,8 @@ module.exports = {
       'styles': resolve('src/assets/styles'),
       'img': resolve('src/assets/img'),
       'mock': resolve('static/mock'),
-      'util': resolve('src/util'),                    
+      'util': resolve('src/util'),   
+      'common': resolve('src/common'),                    
     }
   },
   module: {
