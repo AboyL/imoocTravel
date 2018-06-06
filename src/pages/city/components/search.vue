@@ -11,6 +11,7 @@
       <ul>
         <li class="search-item border-bottom"
             v-for="item of list"
+            @click="changeCity(item.name)"
             :key="item.id">{{item.name}}
         </li>
         <li class="search-item border-bottom"
@@ -61,6 +62,15 @@ export default {
         }
         this.list = result
       }, 100)
+    }
+  },
+  methods: {
+    changeCity (value) {
+      this.$store.commit('changeCity', value)
+      this.goHome()
+    },
+    goHome () {
+      this.$router.push({ name: 'Home' })
     }
   },
   mounted () {

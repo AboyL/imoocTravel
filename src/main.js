@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import FastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+// store
+import store from './store'
 // mock
 import 'mock/index.mock.js'
 // css
@@ -19,6 +21,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

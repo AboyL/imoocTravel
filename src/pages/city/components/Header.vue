@@ -2,7 +2,7 @@
   <div class="header">
     城市选择
     <div class="header-left">
-      <div class="back iconfont icon-fanhui"></div>
+      <div class="back iconfont icon-fanhui" @click="goHome"></div>
     </div>
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
   name: 'CityHeader',
   data () {
     return {
+    }
+  },
+  methods: {
+    goHome () {
+      this.$router.push({name: 'Home'})
     }
   }
 }

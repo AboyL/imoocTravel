@@ -5,11 +5,11 @@
     </div>
     <div class="header-input">
       <i class="search iconfont icon-sousuo"></i>
-      點擊搜索
+      点击搜索
     </div>
     <router-link to="/city">
       <div class="header-right">
-        城市
+        {{currentCity}}
         <i class="iconfont icon-xiasanjiao"></i>
       </div>
     </router-link>
@@ -18,6 +18,11 @@
 <script>
 export default {
   name: 'HomeHeader',
+  computed: {
+    currentCity () {
+      return this.$store.state.city
+    }
+  },
   data () {
     return {
     }
@@ -52,7 +57,8 @@ export default {
     .search
       margin-left 0.1rem
   .header-right
-    width 1.24rem
+    min-width 1.04rem
+    padding 0 .2rem
     float right
     text-align center
     color #ffffff
