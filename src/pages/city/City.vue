@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list :cities="cities" :hotCities="hotCities"></city-list>
     <city-alphabet :cities="cities"></city-alphabet>
   </div>
@@ -33,7 +33,6 @@ export default {
     if (result.ret) {
       const cities = result.data
       this.cities = cities.cities
-      console.log(this.cities)
       this.hotCities = cities.hotCities
     }
   }
