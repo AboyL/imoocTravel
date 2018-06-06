@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import FastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+// element
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 // store
 import store from './store'
 // mock
@@ -16,6 +19,7 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 FastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
@@ -23,5 +27,6 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  render: h => h(App)
 })

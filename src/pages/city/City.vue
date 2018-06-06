@@ -2,7 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
-    <city-list :cities="cities" :hotCities="hotCities"></city-list>
+    <city-list :cities="cities"
+               :hotCities="hotCities"></city-list>
     <city-alphabet :cities="cities"></city-alphabet>
   </div>
 </template>
@@ -27,6 +28,10 @@ export default {
     }
   },
   async mounted () {
+    let loadingInstance = this.$loading({
+      target: document.body,
+      text: '拼命加载中'
+    })
     let result = (await http.request({
       url: 'getCities'
     }))
@@ -35,6 +40,9 @@ export default {
       this.cities = cities.cities
       this.hotCities = cities.hotCities
     }
+    this.$nextTick(() => { // 以服务的方式调用的 Loading 需要异步关闭
+      loadingInstance.close()
+    })
   }
 }
 </script>

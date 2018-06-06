@@ -16,7 +16,6 @@ import HomeWeekend from './components/Weekend.vue'
 
 import http from 'util/http.js'
 import { mapState } from 'vuex'
-
 export default {
   name: 'Home',
   components: {
@@ -42,6 +41,10 @@ export default {
   },
   methods: {
     async getInfo () {
+      let loadingInstance = this.$loading({
+        target: document.body,
+        text: '拼命加载中'
+      })
       this.lastCity = this.currentCity
       let iconList = await http.request({
         url: 'getIcons'
@@ -55,6 +58,9 @@ export default {
       this.icons = iconList
       this.recommends = recommends
       this.weekends = weekends
+      this.$nextTick(() => { // 以服务的方式调用的 Loading 需要异步关闭
+        loadingInstance.close()
+      })
     }
   },
   async mounted () {
