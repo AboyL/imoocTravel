@@ -2,14 +2,18 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommends" :key="item.key">
+      <router-link class="item border-bottom"
+                   tag="li"
+                   :to="'/detail/'+item.key"
+                   v-for="item of recommends"
+                   :key="item.key">
         <img :src="item.src">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <button>查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -60,7 +64,7 @@ export default {
       $line = 0.3rem
       line-height $line
       background #ff9300
-      margin-top .1rem
+      margin-top 0.1rem
       padding 0.2rem
       border-radius 0.06rem
       color #fff
