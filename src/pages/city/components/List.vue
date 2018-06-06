@@ -41,7 +41,7 @@
 </template>
 <script>
 import BetterScroll from 'better-scroll'
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'CityList',
   props: {

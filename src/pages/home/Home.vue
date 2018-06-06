@@ -15,6 +15,7 @@ import HomeRecommend from './components/Recommend.vue'
 import HomeWeekend from './components/Weekend.vue'
 
 import http from 'util/http.js'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -26,26 +27,44 @@ export default {
     HomeWeekend
 
   },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
   data () {
     return {
       icons: [],
       recommends: [],
-      weekends: []
+      weekends: [],
+      lastCity: ''
+    }
+  },
+  methods: {
+    async getInfo () {
+      this.lastCity = this.currentCity
+      let iconList = await http.request({
+        url: 'getIcons'
+      })
+      let recommends = await http.request({
+        url: 'getRecommends'
+      })
+      let weekends = await http.request({
+        url: 'getWeekends'
+      })
+      this.icons = iconList
+      this.recommends = recommends
+      this.weekends = weekends
     }
   },
   async mounted () {
-    let iconList = await http.request({
-      url: 'getIcons'
-    })
-    let recommends = await http.request({
-      url: 'getRecommends'
-    })
-    let weekends = await http.request({
-      url: 'getWeekends'
-    })
-    this.icons = iconList
-    this.recommends = recommends
-    this.weekends = weekends
+    this.getInfo()
+  },
+  activated () {
+    if (this.lastCity !== this.currentCity) {
+      console.log('改变')
+      this.getInfo()
+    }
   }
 }
 </script>
