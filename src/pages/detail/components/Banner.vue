@@ -36,7 +36,6 @@ export default {
       return this.detail.imgs
     },
     img () {
-      console.log(this.detail)
       return this.detail.imgs[0].src
     },
     title () {

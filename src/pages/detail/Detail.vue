@@ -3,15 +3,18 @@
     <detail-banner :detail="detail"
                    v-if="detail">
     </detail-banner>
+    <detail-header></detail-header>
   </div>
 </template>
 <script>
 import DetailBanner from './components/Banner'
+import DetailHeader from './components/Header'
 import http from 'util/http.js'
 export default {
   name: 'Detail',
   components: {
-    DetailBanner
+    DetailBanner,
+    DetailHeader
   },
   data () {
     return {
