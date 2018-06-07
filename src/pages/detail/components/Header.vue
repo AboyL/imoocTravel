@@ -16,64 +16,6 @@
       </div>
       景点详情
     </router-link>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-    <div>zzzzzzzz</div>
-
   </div>
 </template>
 <script>
@@ -127,6 +69,7 @@ export default {
     top 0.5rem
 .header-fixed
   position fixed
+  z-index 999
   top 0
   left 0
   right 0

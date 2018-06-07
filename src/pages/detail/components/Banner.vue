@@ -7,7 +7,7 @@
         <p class="title">{{title}}</p>
         <p class="number">
           <i class="iconfont icon-tupian"></i>
-          {{price}}
+          {{number}}
         </p>
       </div>
     </div>
@@ -41,8 +41,8 @@ export default {
     title () {
       return this.detail.title
     },
-    price () {
-      return this.detail.price
+    number () {
+      return this.detail.imgs.length
     }
   },
   data () {

@@ -17,6 +17,68 @@ Mock.mock(`${baseUrl}/getDetail`, (url) => {
         id: '2',
         src: 'http://img1.qunarzz.com/sight/p0/1803/30/30650dfd9a1959e6a3.water.jpg_350x240_2491ede5.jpg'
       }
+    ],
+    list: [
+      {
+        title: '成人票',
+        children: [
+          {
+            title: '成人联票'
+          }, {
+            title: '成人五馆联票',
+            children: [
+              {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }, {
+                title: '成人五馆联票-长沙店'
+              }
+            ]
+          }
+        ]
+      }, {
+        title: '儿童票',
+        children: [
+          {
+            title: '儿童联票'
+          }
+        ]
+      }
     ]
   }
 })
