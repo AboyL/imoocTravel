@@ -11,19 +11,22 @@
         </p>
       </div>
     </div>
-    <common-gallary :imgs="imgs"
-                    v-show="showGallary"
-                    @clickImg="handleShowGarllary">
-    </common-gallary>
+    <common-fade>
+      <common-gallary :imgs="imgs"
+                      v-show="showGallary"
+                      @clickImg="handleShowGarllary">
+      </common-gallary>
+    </common-fade>
   </div>
 </template>
 <script>
 import CommonGallary from 'common/gallary/Gallary'
-
+import CommonFade from 'common/fade/Fade'
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallary
+    CommonGallary,
+    CommonFade
   },
   props: {
     detail: {
